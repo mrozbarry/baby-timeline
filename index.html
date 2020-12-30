@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50">
+
+  <h1 class="text-4xl text-center mb-10 bg-white py-4 shadow-md">The Baby Barry Timeline</h1>
+
+  <main class="container mx-auto grid grid-cols-2 gap-y-8 px-4 md:px-0 mb-8">
+
+    <article class="col-span-2 md:col-span-1 md:col-start-2 md:text-left">
+      <div class="bg-white md:inline-block p-4 pt-6 shadow border-l-4 border-pink-600">
+        <div class="text-gray-500 text-xs mb-2">May 30, 2021</div>
+        <header class="text-lg font-bold leading-none mb-4">It is your birthday</header>
+        <p>This is when we were told you will be born.</p>
+        <p>
+          Birth Countdown: <strong id="birth-days" class="border-b border-dotted border-gray-400">0</strong> days <span id="direction">to go.</span>
+        </p>
+        <script type="module">
+          const daysElement = document.querySelector('#birth-days');
+          const directionElement = document.querySelector('#direction');
+          const birthDay = new Date('2021-05-30T00:00:00.000-05:00');
+          const days = (birthDay.getTime() - Date.now()) / (1000 * 3600 * 24);
+          daysElement.innerText = Math.abs(Math.floor(days)).toString();
+          directionElement.innerText = days > 0 ? 'to go.' : 'ago.';
+        </script>
+      </div>
+    </article>
+
+    <div id="now" class="col-span-2 flex flex-row items-center justify-center">
+      <div class="flex-grow border-t border-red-600"></div>
+      <div class="mx-4">You are here</div>
+      <div class="flex-grow border-t border-red-600"></div>
+    </div>
+
+    <article class="col-span-2 md:col-span-1 md:col-start-1 md:text-right">
+      <div class="bg-white md:inline-block p-4 pt-6 shadow border-r-4 border-blue-600 md:max-w-1/2">
+        <div class="text-gray-500 text-xs">December 29, 2020</div>
+        <header class="text-lg font-bold leading-none mb-4">Anatomical Ultrasound</header>
+        <p>Well, we saw stuff, and you sure look like a <strong>boy</strong>.</p>
+        <div class="grid md:grid-cols-2 gap-1">
+          <a href="./images/ultrasound-2/1.jpeg" target="_blank"><img src="./images/ultrasound-2/1.jpeg" class="p-1 border border-gray-300" alt="An ultrasound picture" /></a>
+          <a href="./images/ultrasound-2/2.jpeg" target="_blank"><img src="./images/ultrasound-2/2.jpeg" class="p-1 border border-gray-300" alt="An ultrasound picture" /></a>
+          <a href="./images/ultrasound-2/3.jpeg" target="_blank"><img src="./images/ultrasound-2/3.jpeg" class="p-1 border border-gray-300" alt="An ultrasound picture" /></a>
+          <a href="./images/ultrasound-2/4.jpeg" target="_blank"><img src="./images/ultrasound-2/4.jpeg" class="p-1 border border-gray-300" alt="An ultrasound picture" /></a>
+        </div>
+      </div>
+    </article>
+    <div class="hidden md:block"></div>
+
+    <article class="col-span-2 md:col-span-1 md:col-start-2 md:text-left">
+      <div class="bg-white md:inline-block p-4 pt-6 shadow border-l-4 border-blue-600 md:max-w-1/2">
+        <div class="text-gray-500 text-xs mb-2">December 15, 2020</div>
+        <header class="text-lg font-bold leading-none mb-4">First Ultrasound</header>
+        <p class="mb-2">We have visual confirmation, there is definitely a baby.</p>
+        <div class="w-1/2 border border-gray-300 p-2 mx-auto mb-4">
+          <video autoplay muted loop controls src="./video/ultrasound-1.mp4"></video>
+        </div>
+        <p class="mb-2">Also, fun fact, the date and time on the ultrasound screen is wrong.</p>
+      </div>
+    </article>
+
+
+    <article class="col-span-2 md:col-span-1 md:col-start-1 md:text-right">
+      <div class="bg-white md:inline-block p-4 pt-6 shadow border-r-4 border-red-600 md:max-w-1/2">
+        <div class="text-gray-500 text-xs leading-none mb-2">December 7, 2020</div>
+        <header class="text-lg font-bold leading-none mb-4">We heard your heart beat</header>
+        <p class="mb-2">Listen to that little ticker!</p>
+        <audio controls src="./audio/baby-heart-beat-dec7-15weeks.mp3"></audio>
+      </div>
+    </article>
+    <div class="hidden md:block"></div>
+
+    <article class="col-span-2 md:col-span-1 md:col-start-2 md:text-left">
+      <div class="bg-white md:inline-block p-4 pt-6 shadow border-l-4 border-green-600 md:max-w-1/2">
+        <div class="text-gray-500 text-xs mb-2">September 6, 2020</div>
+        <header class="text-lg font-bold leading-none mb-4">Conception/Fertilization</header>
+        <p>Yup, we did that.</p>
+      </div>
+    </article>
+  </main>
+
+</body>
+</html>
+
