@@ -1,0 +1,41 @@
+doctype html
+html( lang="en" )
+  head
+    meta( charset="utf-8" )
+    title Baby Barry 2021
+    meta( name="description" content="Alex and Erinn Barry's Baby Timeline" )
+    meta( name="viewport" content="width=device-width, initial-scale=1" )
+    link( href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" )
+
+  body.bg-gray-50
+    include ./components/date.pug
+    include ./components/card.pug
+
+    h1.text-4xl.text-center.mb-10.bg-white.py-4.shadow-md The Baby Barry Timeline
+
+    main.container.mx-auto.grid.grid-cols-2.gap-y-8.px-4.mb-8( class="md:px-0" )
+      +card('May 30, 2021', 'It is your birthday', 'right', 'pink')
+        p This is when we were told you will be born.
+        p
+          | Birth Countdown: <strong id="birth-days" class="border-b border-dotted border-gray-400">0</strong> days <span id="direction">to go.</span>
+        script( type="module" ).
+          const daysElement = document.querySelector('#birth-days');
+          const directionElement = document.querySelector('#direction');
+          const birthDay = new Date('2021-05-30T00:00:00.000-05:00');
+          const days = (birthDay.getTime() - Date.now()) / (1000 * 3600 * 24);
+          daysElement.innerText = Math.abs(Math.floor(days)).toString();
+          directionElement.innerText = days > 0 ? 'to go.' : 'ago.';
+
+      .col-span-2.flex.flex-row.items-center.justify-center#now
+        .flex-grow.border-t.border-red-600
+        .mx-4
+          +date()
+            #now-date Now
+          | You are here
+        .flex-grow.border-t.border-red-600
+      script( type="module" ).
+        document
+          .querySelector('#now-date')
+          .innerText = (new Date()).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+
+      block cards

@@ -1,0 +1,67 @@
+[
+  {
+    "date": "December 29, 2020",
+    "accent": "blue",
+    "title": "Anatomical Ultrasound",
+    "content": [
+      {
+        "type": "paragraph",
+        "value": "Well, we saw stuff, and you sure look like a <strong>boy</strong>."
+      },
+      {
+        "type": "images",
+        "value": [
+          "/images/ultrasound-2/1.jpeg",
+          "/images/ultrasound-2/2.jpeg",
+          "/images/ultrasound-2/3.jpeg",
+          "/images/ultrasound-2/4.jpeg"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "December 15, 2020",
+    "accent": "blue",
+    "title": "First Ultrasound",
+    "content": [
+      {
+        "type": "paragraph",
+        "value": "We have visual confirmation, there is definitely a baby."
+      },
+      {
+        "type": "video",
+        "value": "/video/ultrasound-1.mp4"
+      },
+      {
+        "type": "paragraph",
+        "value": "Also, fun fact, the date and time on the ultrasound screen is wrong."
+      }
+    ]
+  },
+  {
+    "date": "December 7, 2020",
+    "accent": "red",
+    "title": "We heard your heart beat",
+    "content": [
+      {
+        "type": "paragraph",
+        "value": "Listen to that little ticker!"
+      },
+      {
+        "type": "audio",
+        "value": "/audio/baby-heart-beat-dec7-15weeks.mp3"
+      }
+    ]
+  },
+  {
+    "date": "September 6, 2020",
+    "accent": "green",
+    "title": "Conception/Fertilization",
+    "content": [
+      {
+        "type": "paragraph",
+        "value": "Yup, we did that."
+      }
+    ]
+  }
+]

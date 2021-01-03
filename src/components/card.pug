@@ -1,0 +1,12 @@
+include ./date.pug
+
+mixin card(date, title, side = 'left', accent = 'pink')
+  article.col-span-2( class="md:col-span-1 " + (side === 'right' ? 'md:col-start-2 md:text-left' : 'md:text-right') )
+    .bg-white.p-4.pt-6.shadow( class="md:inline-block border-" + accent + "-600 border-" + (side === 'right' ? 'l' : 'r') + "-4" )
+      +date()
+        = date
+      header.text-lg.font-bold.leading-none.mb-4= title
+      if block
+        block
+  if side === 'left'
+    .hidden( class="md:block" )

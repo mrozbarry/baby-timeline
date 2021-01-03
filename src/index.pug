@@ -1,0 +1,9 @@
+extends layout.pug
+include components/card.pug
+include components/content.pug
+
+block cards
+  each event, index in events
+    +card(event.title, event.date, index % 2 === 0 ? 'left' : 'right', event.accent)
+      each part in event.content
+        +content(part)

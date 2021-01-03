@@ -1,0 +1,27 @@
+mixin paragraph(value)
+  p.mb-2 !{value}
+
+mixin images(value)
+  .grid.gap-1( class="sm:grid-cols-2" )
+    each image in value
+      a( href=image )
+        img( src=image alt="" )
+
+mixin video(value)
+  .border.border-gray-300.p-2.mx-auto.mb-4( class="w-1/2" )
+    video( autoplay muted loop controls src=value )
+
+mixin audio(value)
+  audio( controls src=value )
+
+mixin content(c)
+  if c.type === 'paragraph'
+    +paragraph(c.value)
+  else if c.type === 'images'
+    +images(c.value)
+  else if c.type === 'video'
+    +video(c.value)
+  else if c.type === 'audio'
+    +audio(c.value)
+  else
+    = c.value
