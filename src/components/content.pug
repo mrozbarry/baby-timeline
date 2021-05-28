@@ -2,7 +2,7 @@ mixin paragraph(value)
   p.mb-2 !{value}
 
 mixin images(value)
-  .grid.gap-1( class="sm:grid-cols-2" )
+  .grid.gap-1( class="sm:grid-cols-2 gap-2" )
     each image in value
       a( href=image )
         img( src=image alt="" )
